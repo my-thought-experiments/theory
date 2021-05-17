@@ -1,65 +1,79 @@
-# Big O Notation
+# Analysis of algorithms
 
-Simplified analysis of an algorithm's efficiency.
+A language and metric to describe the efficiency of algorithm.
 
-## Type of measurement
+**Asymptotic Analysis**
 
-1. Worst-case
-2. Best-case
-3. Average-case
+* The main idea of asymptotic analysis is to have a measure of the efficiency of algorithms that
+don't depend on machine specific constants and doesn't require algorithms to be implemented
+and time taken by programs to be compared.
 
-## General rules
+* Asymptotic notations are mathematical tools to represent Time and Space Complexity.
 
-1. Igore constants.
+**Notations**
 
-    For eg. 5n --> O(n)
+1. Big O
 
-2. Certain teams dominate others
+* Useful for evaluating worst case performance of an algorithm.
+* At most upper bound.
 
-    For eg.
+2. Big Omega Ω
+
+* Useful for evaluating best case performance of an algorithm.
+* At lease lower bound.
+
+3. Big Theta Θ
+
+* Useful for evaluating average case performance of an algorithm.
+* Exact time
+
+## Time Complexity
+
+**Rules**
+
+1. Find the fastest growing term.
+
+    Example
+    ```
     O(1) < O(Log n) < O(n) < O(n Log n) < O(n^2) < O(2^n) < O(n!)
-
-    **In Table form:**
-    | Teams | Notation | Comments |
-    |:---|:---|:---|
-    | Excellent | O(1) | Constant |
-    | Good | O(Log n) | Logarithmic |
-    | Fair | O(n) | Linear |
-    | Bad | O(n Log n) | 
-    | Horrible | O(n^2) / O(2^n) | Exponential |
-    |  | O(n!) | Factorial |
-
-### Time
-
-Rules
-
-  1. Find the fastest growing term
-  2. Take out the co-efficient
-
-1. **Constant time**: Independent of input size, n. Hence, O(1)
-
-    For eg.
-
-    ```
-    T = c = 0.343 = 0.343 * 1 = O(1)
     ```
 
+2. Take out the co-efficient/constants.
+
+    Example
     ```
-    x = 5 + (15 * 20) // O(1)
+    5n --> O(n)
     ```
 
-    ```
-    x = 5 + (15 * 20)
-    y = 15 - 2
-    print x + y // O(1)
-    ```
-    Total time = O(1) + O(1) + O(1) = O(1)
+### Constant time
 
-2. **Logarithmic time**: O(Log n)
+Independent of input size (n). Hence, O(1)
 
-3. **Linear time**: n * O(1) = O(n)
+Example
+```
+T = c = 0.343 = 0.343 * 1 --> O(1)
+```
 
-    For eg.
+```
+x = 5 + (15 * 20) --> O(1)
+```
+
+```
+x = 5 + (15 * 20) --> O(1)
+y = 15 - 2 --> O(1)
+print x + y --> O(1)
+```
+Total time = O(1) + O(1) + O(1) = O(1)
+
+### Logarithmic time
+
+O(Log n)
+
+### Linear time
+
+n * O(1) = O(n)
+
+    Example
 
     ```
     T = an + b = O(n)
@@ -77,9 +91,11 @@ Rules
     ```
     Total time = O(1) + O(n) = O(n)
 
-4. **Quadratic time**: O(n^2)
+## Quadratic time
 
-    For eg.
+O(n^2)
+
+    Example
 
     ```
     T = cn^2 + dn + e = O(n^2)
@@ -120,6 +136,20 @@ Rules
     ```
     Total time = O(1) + O(Log n) + O(n^2) = O(n^2)
 
+
+**From Slowest to Fastest Growing**
+
+| Function Type | | Example |
+|:---|:---|:---|
+| Constant | O(1) | 5, 25, 2500 |
+| Logarithmic | O(Log n)| Log n |
+| Linear | O(n) | 5n, 25n, 2500n |
+| Linearithmic | O(n Log n) | n Log n |
+| Polynomial | O(n^2) | 5n^2, 25n^4, 2500n^8 |
+| Exponential | O(c^n) | 5^n, 25^25000n |
+| Factorial | O(n!) | |
+
+Where n = number of inputs and c = constant
 
 ## Algorithms
 
@@ -196,4 +226,5 @@ Rules
 
 ## References
 
+* [https://www.youtube.com/watch?v=ei-A_wy5Yxw&ab_channel=profbillbyrne](https://www.youtube.com/watch?v=ei-A_wy5Yxw&ab_channel=profbillbyrne)
 * [Desmos](https:/www.desmos.com)
